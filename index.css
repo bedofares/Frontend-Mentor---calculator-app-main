@@ -193,8 +193,11 @@ footer {
 
 footer a:hover {
     color: #864CFF;
+    text-decoration: none;
 }
-
+a:focus {
+    outline: none;
+}
 @media (max-width: 650px) {
     .calculator-card {
         max-width: 28rem;
