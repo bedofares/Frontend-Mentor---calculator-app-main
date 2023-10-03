@@ -1,37 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Age calculator app</title>
+    <link rel="stylesheet" href="./index.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Age calculator app</title>
+  </head>
+  <body>
+    <main>
+      <div class="calculator-card">
+        <div class="birth-date-wrapper">
+          <div class="day">
+            <label id="user-birth-day-label">Day</label>
+            <input id="user-birth-day" type="number" min="0" placeholder="DD" maxlength="2"
+            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+            />
+            <span id="dayErrorMsg" class="errorMsg">Must be a valid day</span>
+          </div>
+          <div class="month">
+            <label id="user-birth-month-label">Month</label>
+            <input id="user-birth-month" type="number" min="0" max="12" maxlength="2" 
+            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+            placeholder="MM" />
+            <span id="monthErrorMsg" class="errorMsg">Must be a valid Month</span>
+          </div>
+          <div class="year">
+            <label id="user-birth-year-label">Year</label>
+            <input id="user-birth-year" type="number" min="0" maxlength="4" 
+            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+            placeholder="YYYY" />
+            <span id="yearErrorMsg" class="errorMsg">Must be in the past</span>
+            <span>
+          </div>
+        </div>
 
-  Day
-  DD
+        <div class="separator">
+          <div class="separator-line"></div>
+          <div onclick="calculateAge()" class="btn">
+            <img src="./assets/images/icon-arrow.svg" />
+          </div>
+        </div>
 
-  Month
-  MM
+        <div class="age-result">
+          <div class="years-result">
+            <p id="year-result-value" class="result-value">--</p>
+            <p>years</p>
+          </div>
+          <div class="month-result">
+            <p id="month-result-value" class="result-value">--</p>
+            <p>months</p>
+          </div>
+          <div class="day-result">
+            <p id="day-result-value" class="result-value">--</p>
+            <p>days</p>
+          </div>
+        </div>
+      </div>
+    </main>
 
-  Year
-  YYYY
-
-  -- years
-  -- months
-  -- days
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <footer>
+      <div>
+        Challenge by
+        <b>
+          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+            >Frontend Mentor
+          </a>
+        </b>
+      </div>
+      <b>|</b>
+      <div>
+        Coded by
+        <b>
+          <a
+            href="https://www.frontendmentor.io/profile/bedofares"
+            target="_blank"
+            >Abdelrahman fares</a
+          >.
+        </b>
+      </div>
+    </footer>
+    <script src="./index.js"></script>
+  </body>
 </html>
